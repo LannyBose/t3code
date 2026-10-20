@@ -63,6 +63,7 @@ query PullRequestCore(
     mergeCommitAllowed
     squashMergeAllowed
     rebaseMergeAllowed
+    autoMergeAllowed
     viewerPermission
     pullRequest(number: $number) {
       number
@@ -72,6 +73,7 @@ query PullRequestCore(
       state
       isDraft
       mergeable
+      mergeStateStatus
       reviewDecision
       additions
       deletions
@@ -366,6 +368,7 @@ query ViewerPermissions($owner: String!, $name: String!, $number: Int!) {
     mergeCommitAllowed
     squashMergeAllowed
     rebaseMergeAllowed
+    autoMergeAllowed
     viewerPermission
     pullRequest(number: $number) {
       viewerCanUpdate
